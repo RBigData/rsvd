@@ -11,8 +11,8 @@ class RSVD
 {
   public:
     RSVD();
-    RSVD(int q);
-    RSVD(int q, int seed);
+    RSVD(int seed);
+    RSVD(int seed, int q);
     int get_seed() const;
     int get_q() const;
     void set_seed(const int seed);
@@ -24,7 +24,8 @@ class RSVD
     arma::mat Vt;
     
   private:
-    int get_random_seed();
+    int initial_seed();
+    int default_q();
     int q_;
     int seed_;
 };

@@ -2,27 +2,33 @@
 
 #include "rsvd.h"
 
+int RSVD::default_q()
+{
+  return 3;
+}
+
+
 
 RSVD::RSVD()
 {
-  q_ = 3;
-  seed_ = get_random_seed();
+  seed_ = initial_seed();
+  q_ = default_q();
 }
 
 
 
-RSVD::RSVD(int q)
+RSVD::RSVD(int seed)
 {
-  q_ = q;
-  seed_ = get_random_seed();
-}
-
-
-
-RSVD::RSVD(int q, int seed)
-{
-  q_ = q;
   seed_ = seed;
+  q_ = default_q();
+}
+
+
+
+RSVD::RSVD(int seed, int q)
+{
+  seed_ = seed;
+  q_ = q;
 }
 
 
