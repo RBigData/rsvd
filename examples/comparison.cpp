@@ -8,7 +8,7 @@ int main()
   arma::mat x(m, n);
   x.randn();
   
-  Rsvd rsvd(3, 1234);
+  RSVD rsvd(3, 1234);
   rsvd.rsvd(3, true, true, x);
   arma::mat x_rc = rsvd.U * diagmat(rsvd.D) * rsvd.Vt.t();
   abs(x-x_rc).print();

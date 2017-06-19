@@ -7,7 +7,7 @@
   throw std::runtime_error("unable to compute QR");
 
 
-int Rsvd::rsvd(const int k, const bool retu, const bool retvt, arma::mat &X)
+int RSVD::rsvd(const int k, const bool retu, const bool retvt, arma::mat &X)
 {
   bool check;
   const int n = X.n_cols;

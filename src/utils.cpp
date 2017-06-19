@@ -60,7 +60,7 @@ static inline int mix_96(int a, int b, int c)
 }
 
 
-int Rsvd::get_random_seed()
+int RSVD::get_random_seed()
 {
   int pid;
   int ret;

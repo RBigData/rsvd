@@ -8,7 +8,7 @@ int main()
   arma::mat x(m, n);
   x.randn();
   
-  Rsvd rsvd(3, 1234);
+  RSVD rsvd(3, 1234);
   rsvd.rsvd(1, true, false, x);
   
   rsvd.D.print();

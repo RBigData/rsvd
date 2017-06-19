@@ -5,11 +5,11 @@
 #define ARMA_DONT_USE_WRAPPER
 #include <armadillo>
 
-class Rsvd
+class RSVD
 {
   public:
-    Rsvd(int q, int seed);
-    Rsvd(int q);
+    RSVD(int q, int seed);
+    RSVD(int q);
     int get_seed() const;
     int get_q() const;
     void set_seed(const int seed);
