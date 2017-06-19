@@ -3,10 +3,10 @@
 #include "rsvd.h"
 
 
-RSVD::RSVD(int q, int seed)
+RSVD::RSVD()
 {
-  q_ = q;
-  seed_ = seed;
+  q_ = 3;
+  seed_ = get_random_seed();
 }
 
 
@@ -15,6 +15,14 @@ RSVD::RSVD(int q)
 {
   q_ = q;
   seed_ = get_random_seed();
+}
+
+
+
+RSVD::RSVD(int q, int seed)
+{
+  q_ = q;
+  seed_ = seed;
 }
 
 

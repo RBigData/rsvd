@@ -10,8 +10,9 @@
 class RSVD
 {
   public:
-    RSVD(int q, int seed);
+    RSVD();
     RSVD(int q);
+    RSVD(int q, int seed);
     int get_seed() const;
     int get_q() const;
     void set_seed(const int seed);
