@@ -24,6 +24,8 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+// taken unmodified from the ngram R package source
+
 
 #ifndef __NGRAM_PLATFORM__
 #define __NGRAM_PLATFORM__

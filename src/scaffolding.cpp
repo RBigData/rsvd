@@ -9,6 +9,8 @@ RSVD::RSVD(int q, int seed)
   seed_ = seed;
 }
 
+
+
 RSVD::RSVD(int q)
 {
   q_ = q;
@@ -16,20 +18,27 @@ RSVD::RSVD(int q)
 }
 
 
+
 int RSVD::get_seed() const
 {
   return seed_;
 }
+
+
 
 int RSVD::get_q() const
 {
   return q_;
 }
 
+
+
 void RSVD::set_seed(const int seed)
 {
   seed_ = seed;
 }
+
+
 
 void RSVD::set_q(const int q)
 {

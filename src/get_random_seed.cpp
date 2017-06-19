@@ -25,6 +25,8 @@
 */
 
 
+// taken mostly unmodified from the ngram R package source
+
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
