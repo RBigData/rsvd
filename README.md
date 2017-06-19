@@ -7,7 +7,7 @@
 * **Bug reports**: https://github.com/RBigData/rsvd/issues
 
 
-A basic implementation of the [randomized svd](https://arxiv.org/pdf/0909.4061) algorithm in [armadillo](http://arma.sourceforge.net/).  It is a fairly direct translation of the implementation in the [pbdML](https://github.com/RBigData/pbdML) package.
+A basic implementation of the [randomized svd](https://arxiv.org/pdf/0909.4061) algorithm using the C++ library [armadillo](http://arma.sourceforge.net/).  It is a fairly direct translation of the implementation in the [pbdML](https://github.com/RBigData/pbdML) package.
 
 
 
