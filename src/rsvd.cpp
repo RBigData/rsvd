@@ -6,7 +6,8 @@
 #define THROW_QR \
   throw std::runtime_error("unable to compute QR");
 
-int Rsvd::rsvd(const int seed, const int k, const bool retu, const bool retvt, arma::mat &X)
+
+int Rsvd::rsvd(const int k, const bool retu, const bool retvt, arma::mat &X)
 {
   bool check;
   const int n = X.n_cols;
@@ -31,7 +32,7 @@ int Rsvd::rsvd(const int seed, const int k, const bool retu, const bool retvt, a
     throw std::runtime_error("unable to allocate nx(2*k) matrix Omega");
   }
   
-  arma::arma_rng::set_seed(seed);
+  arma::arma_rng::set_seed(seed_);
   Omega.randu();
   
   arma::mat Y = X * Omega;
