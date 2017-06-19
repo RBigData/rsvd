@@ -8,5 +8,4 @@ rsvd:
 
 
 clean:
-	clean:
 	rm -rf ./build
