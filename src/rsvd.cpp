@@ -37,17 +37,17 @@ int RSVD::rsvd(const int k, const bool retu, const bool retv, arma::mat &X)
   
   arma::mat Y = X * Omega;
   
-  check = qr(Q, R, X);
+  check = qr_econ(Q, R, Y);
   
   for (int i=0; i<q_; i++)
   {
     Y = X.t() * Q;
-    check = qr(Q, R, Y);
+    check = qr_econ(Q, R, Y);
     if (!check)
       THROW_QR;
     
     Y = X * Q;
-    check = qr(Q, R, Y);
+    check = qr_econ(Q, R, Y);
     if (!check)
       THROW_QR;
   }
@@ -55,7 +55,7 @@ int RSVD::rsvd(const int k, const bool retu, const bool retv, arma::mat &X)
   
   // Stage B
   B = Q.t() * X;
-  check = svd(B_U, B_D, B_Vt, B);
+  check = svd_econ(B_U, B_D, B_V, B);
   if (!check)
     throw std::runtime_error("unable to compute SVD");;
   
