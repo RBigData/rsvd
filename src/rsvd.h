@@ -17,11 +17,11 @@ class RSVD
     int get_q() const;
     void set_seed(const int seed);
     void set_q(const int q);
-    int rsvd(const int k, const bool retu, const bool retvt, arma::mat &X);
+    int rsvd(const int k, const bool retu, const bool retv, arma::mat &X);
     
     arma::vec D;
     arma::mat U;
-    arma::mat Vt;
+    arma::mat V;
     
   private:
     int initial_seed();

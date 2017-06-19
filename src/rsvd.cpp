@@ -7,14 +7,14 @@
   throw std::runtime_error("unable to compute QR");
 
 
-int RSVD::rsvd(const int k, const bool retu, const bool retvt, arma::mat &X)
+int RSVD::rsvd(const int k, const bool retu, const bool retv, arma::mat &X)
 {
   bool check;
   const int n = X.n_cols;
   arma::mat Omega;
   arma::mat Q, R;
   arma::vec B_D;
-  arma::mat B, B_U, B_Vt;
+  arma::mat B, B_U, B_V;
   
   if (k < 1)
     throw std::invalid_argument("'k' must be positive");
@@ -71,10 +71,10 @@ int RSVD::rsvd(const int k, const bool retu, const bool retvt, arma::mat &X)
   else
     U = arma::mat(0, 0);
   
-  if (retvt)
-    Vt = B_Vt(arma::span(0, k-1), arma::span::all);
+  if (retv)
+    V = B_V(arma::span(0, k-1), arma::span::all);
   else
-    Vt = arma::mat(0, 0);
+    V = arma::mat(0, 0);
   
   
   return 0;
