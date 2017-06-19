@@ -15,7 +15,7 @@ int main()
   putchar('\n');
   rsvd.U.print();
   putchar('\n');
-  rsvd.Vt.print();
+  rsvd.V.print();
   
   return 0;
 }

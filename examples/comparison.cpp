@@ -10,7 +10,7 @@ int main()
   
   RSVD rsvd(1234);
   rsvd.rsvd(3, true, true, x);
-  arma::mat x_rc = rsvd.U * diagmat(rsvd.D) * rsvd.Vt.t();
+  arma::mat x_rc = rsvd.U * diagmat(rsvd.D) * rsvd.V.t();
   abs(x-x_rc).print();
   
   return 0;
