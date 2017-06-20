@@ -23,4 +23,6 @@ make
 
 ## Examples
 
-See the `examples/` sub tree.
+The main codebase is C++, making heavy use of armadillo.  However, there is a C API as well.
+
+See the `examples/` sub tree for examples of each.
