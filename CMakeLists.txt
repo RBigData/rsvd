@@ -1,7 +1,9 @@
 cmake_minimum_required (VERSION 3.6.0)
 project(rsvd)
+enable_language(C)
 enable_language(CXX)
 
+include(cmake/Modules/restrict.cmake)
 
 find_package(BLAS REQUIRED)
 find_package(LAPACK REQUIRED)
