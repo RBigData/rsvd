@@ -6,8 +6,8 @@
 
 int main()
 {
-  const int m = 10000;
-  const int n = 250;
+  const int m = 20000;
+  const int n = 500;
   const int k = 3;
   
   arma::mat x(m, n);
