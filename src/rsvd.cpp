@@ -7,7 +7,7 @@
   throw std::runtime_error("unable to compute QR");
 
 
-int RSVD::rsvd(const int k, const bool retu, const bool retv, arma::mat &X)
+int RSVD::rsvd(const int k, const bool retu, const bool retv, const arma::mat &X)
 {
   bool check;
   const int n = X.n_cols;
@@ -21,6 +21,8 @@ int RSVD::rsvd(const int k, const bool retu, const bool retv, arma::mat &X)
   else if (k > n)
     throw std::invalid_argument("'k' must be less than nrows(X)");
   
+  if (X.n_rows < 1 || n < 1)
+    throw std::invalid_argument("# of rows/cols of 'X' must each be >= 1");
   
   // Stage A from the paper
   try
