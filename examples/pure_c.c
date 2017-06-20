@@ -21,7 +21,7 @@ static void printmat(cmat_r X)
   for (len_t i=0; i<m; i++)
   {
     for (len_t j=0; j<n; j++)
-      printf("%.4f ", (X->data)[i + m*j]);
+      printf("%9.4f ", (X->data)[i + m*j]);
     
     putchar('\n');
   }
@@ -34,7 +34,7 @@ static void printvec(cvec_r X)
   const len_t n = X->len;
   
   for (len_t i=0; i<n; i++)
-    printf("%.4f\n", X->data[i]);
+    printf("%9.4f\n", X->data[i]);
   
   putchar('\n');
 }
