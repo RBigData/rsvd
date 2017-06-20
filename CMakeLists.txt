@@ -2,6 +2,13 @@ cmake_minimum_required (VERSION 3.6.0)
 project(rsvd)
 enable_language(C)
 enable_language(CXX)
+set(CMAKE_BUILD_TYPE Release)
+
+if (${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" OR
+    ${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Wextra")
+endif()
+
 
 include(cmake/Modules/restrict.cmake)
 
@@ -10,8 +17,6 @@ find_package(LAPACK REQUIRED)
 find_package(Armadillo REQUIRED)
 
 include_directories(${ARMADILLO_INCLUDE_DIRS})
-
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -O3")
 
 file(GLOB SOURCES src/*.cpp)
 file(GLOB INCLUDE src/rsvd.h)
