@@ -2,6 +2,7 @@ cmake_minimum_required (VERSION 3.6.0)
 project(rsvd)
 enable_language(C)
 enable_language(CXX)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_BUILD_TYPE Release)
 
 if (${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" OR

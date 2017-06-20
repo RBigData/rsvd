@@ -8,6 +8,7 @@
 
 #define ARMA_DONT_USE_WRAPPER
 #include <armadillo>
+#include <cstdint>
 
 class RSVD
 {
@@ -88,6 +89,7 @@ typedef struct svd_t
 
 int C_rsvd(csvdp_r p, cmat_r X, svd_t *const restrict svd);
 int C_free_svd(svd_t *const restrict svd);
+
 
 #ifdef __cplusplus
 }
