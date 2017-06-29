@@ -9,6 +9,8 @@
 
 A basic implementation of the [randomized svd](https://arxiv.org/pdf/0909.4061) algorithm using the C++ library [armadillo](http://arma.sourceforge.net/).  It is a fairly direct translation of the implementation in the [pbdML](https://github.com/RBigData/pbdML) package.
 
+For ease of distribution, the armadillo sources are distributed with the package under the `include/` directory.  See `include/LICENSE.txt` for armadillo copyright details.
+
 
 
 ## Installation
