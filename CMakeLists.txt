@@ -7,17 +7,18 @@ set(CMAKE_BUILD_TYPE Release)
 
 if (${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" OR
     ${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Wextra")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 endif()
 
+include_directories("include/")
 
 include(cmake/Modules/restrict.cmake)
 
 find_package(BLAS REQUIRED)
 find_package(LAPACK REQUIRED)
-find_package(Armadillo REQUIRED)
 
-include_directories(${ARMADILLO_INCLUDE_DIRS})
+#find_package(Armadillo REQUIRED)
+#include_directories(${ARMADILLO_INCLUDE_DIRS})
 
 file(GLOB SOURCES src/*.cpp)
 file(GLOB INCLUDE src/rsvd.h)
