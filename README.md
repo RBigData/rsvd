@@ -15,7 +15,7 @@ For ease of distribution, the armadillo sources are distributed with the package
 
 ## Installation
 
-You will need an installation of armadillo and CMake.  Once you have these, simply run
+Assuming you have CMake, simply run
 
 ```
 make
