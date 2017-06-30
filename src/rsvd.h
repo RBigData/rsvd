@@ -20,6 +20,7 @@ class RSVD
     int get_q() const;
     void set_seed(const int seed);
     void set_q(const int q);
+    int center(arma::mat &X) const;
     int rsvd(const int k, const bool retu, const bool retv, const arma::mat &X);
     
     arma::vec D;
@@ -87,8 +88,9 @@ typedef struct svd_t
 
 #define RSVD_BADMALLOC -1
 
-int C_rsvd(csvdp_r p, cmat_r X, svd_t *const restrict svd);
 int C_free_svd(svd_t *const restrict svd);
+int C_center(mat_r X);
+int C_rsvd(csvdp_r p, cmat_r X, svd_t *const restrict svd);
 
 
 #ifdef __cplusplus

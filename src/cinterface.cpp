@@ -1,8 +1,11 @@
+// Author: Drew Schmidt
+
 #include "rsvd.h"
 
 #include <cstdlib>
 
 #define FREE(ptr) if(ptr!=NULL) free(ptr)
+
 
 extern "C" int C_free_svd(svd_t *const restrict svd)
 {
@@ -24,6 +27,17 @@ extern "C" int C_free_svd(svd_t *const restrict svd)
 
 
 
+extern "C" int C_center(mat_r X)
+{
+  arma::mat X_arma = arma::mat(X->data, X->nrows, X->ncols, true, false);
+  RSVD rsvd;
+  rsvd.center(X_arma);
+  
+  return 0;
+}
+
+
+
 extern "C" int C_rsvd(csvdp_r p, cmat_r X, svd_t *const restrict svd)
 {
   arma::mat X_arma = arma::mat(X->data, X->nrows, X->ncols, true, false);
@@ -31,7 +45,6 @@ extern "C" int C_rsvd(csvdp_r p, cmat_r X, svd_t *const restrict svd)
   rsvd.rsvd(p->k, p->retu, p->retv, X_arma);
   
   
-  // TODO check mallocs
   svd->D =(dvector_t *) malloc(sizeof(*svd->D));
   svd->U = (dmatrix_t *) malloc(sizeof(*svd->U));
   svd->V = (dmatrix_t *) malloc(sizeof(*svd->V));
